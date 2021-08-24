@@ -8,6 +8,14 @@ To overcome the drawbacks of the below method, and be able to take data from any
 In:
 No info is given about the geometry, either way the model is able to learn. 
 
+CONVLSTMMODEL : (sims, times, points, feature) --> (sims, times, points, feature)
+Trainined with all the timesteps but the goal is to use it with n previous know times, for example:
+(sim, 1, ...) ---predict---> (sim, 2, ...) 
+(sim, 1&2, ...) ---predict---> (sim, 2&3, ...)
+(sim, 1&2&3, ...) ---predict---> (sim, 2&3&4, ...) ...and so on...
+
+CONVMODEL : (sims * times , points, feature) --> (sims * times, points, feature)
+
 In:
 
 PointNet (https://github.com/charlesq34/pointnet) concept is used joined with the last models giving information about the geometry. Getting the spatial coordinates of each cell center the OpenFOAM's post-processing utility - writeCellCentres - is used. 
