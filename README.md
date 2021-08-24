@@ -11,7 +11,9 @@ No info is given about the geometry, either way the model is able to learn.
 CONVLSTMMODEL : (sims, times, points, feature) --> (sims, times, points, feature)
 Trainined with all the timesteps but the goal is to use it with n previous know times, for example:
 (sim, 1, ...) ---predict---> (sim, 2, ...) 
+
 (sim, 1&2, ...) ---predict---> (sim, 2&3, ...)
+
 (sim, 1&2&3, ...) ---predict---> (sim, 2&3&4, ...) ...and so on...
 
 CONVMODEL : (sims * times , points, feature) --> (sims * times, points, feature)
