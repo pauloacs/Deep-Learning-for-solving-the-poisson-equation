@@ -72,6 +72,16 @@ It revealed itself too expensive so now I'm using only 1/4 of the data.
 Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be able to do:  input:(...,other_N) --> output(...,other_N). **Try this**
 
 
+## IV - Physics informed neural network
+
+Since the models have too much parameters, differentiate multiple times , for each batch in each epoch becomes prohibitively expensive (and very RAM demanding crashing the google Colab when using 12 GB of RAM). To overcome this wall, multiple methods are being tried:
+
+1 - using a different neural network to refine the result of one of the previous models minimizing the residuals of the governing equations and matching the boundary conditions - not knowing the true values. Using adam optimization but also B-LFGS (local optimization) as in https://github.com/maziarraissi/PINNs .
+
+<img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE}" title=" Loss= L_{B} + L_{GE}" />
+B - Boundaries and GE - Governing equations
+
+2 - retrain the big model (update its parameters)  to archive a lower loss in one prediction having the same loss as 1 - thus refining the prediction.  
 
 
 ## TEST OTHER 3D POINTCLOUD FRAMEWORKS:
