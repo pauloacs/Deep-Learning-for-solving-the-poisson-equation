@@ -79,7 +79,9 @@ Since the models have too much parameters, differentiate multiple times , for ea
 1 - using a different neural network to refine the result of one of the previous models minimizing the residuals of the governing equations and matching the boundary conditions - not knowing the true values. Using adam optimization but also B-LFGS (local optimization) as in https://github.com/maziarraissi/PINNs .
 
 <img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE}" title=" Loss= L_{B} + L_{GE}" />
-B - Boundaries and GE - Governing equations
+
+*B* - Boundaries and *GE* - Governing equations
+
 
 2 - retrain the big model (update its parameters)  to archive a lower loss in one prediction having the same loss as 1 - thus refining the prediction.  
 
