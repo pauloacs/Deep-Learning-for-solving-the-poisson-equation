@@ -34,10 +34,11 @@ test loss ~ 2e-3.
 
 In:
 
-PointNet (https://github.com/charlesq34/pointnet) concept is used joined with the last models giving information about the geometry. Getting the spatial coordinates of each cell center the OpenFOAM's post-processing utility - writeCellCentres - is used. 
+PointNet (https://github.com/charlesq34/pointnet) concept is used joined with the last models giving information about the geometry. Getting the spatial coordinates of each cell center the OpenFOAM's post-processing utility - writeCellCentres - is used. The original PointNet architecture is presented in the following image, the segmentation network is the one of interest in this case.
+
 ![alt text](http://stanford.edu/~rqi/pointnet/images/pointnet.jpg)
 
-PointNet is successfully used to predict flow quantities in https://arxiv.org/abs/2010.09469 but for stationary flow, ence only giving coordinate information. Here the ultimate goal is to tackle the instationary evolution of a flow hence the network is not used directly as presented in the above image.  
+PointNet is successfully used to predict flow quantities in https://arxiv.org/abs/2010.09469 but for stationary flow, hence only giving coordinate information. Here the ultimate goal is to tackle the instationary evolution of a flow hence the network is not used directly as presented in the above image.  
 
 
 
