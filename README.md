@@ -90,4 +90,4 @@ To increase training performance, the data was further normalized to be in [0-1]
 
 <img src="https://latex.codecogs.com/svg.image?\varphi^{*}&space;=&space;\frac{\varphi&space;-&space;min(\varphi)}{max(\varphi)-&space;min(\varphi)}" title="\varphi^{*} = \frac{\varphi - min(\varphi)}{max(\varphi)- min(\varphi)}" />
 
-where \varphi is some physical quantity. The max and min values are those of the whole training set. 
+where <img src="https://latex.codecogs.com/svg.image?\varphi" title="\varphi" /> is some physical quantity. The max and min values are those of the whole training set. 
