@@ -14,6 +14,7 @@ IMPORTANT NOTE: This way the features (physical quantities) are mapped directly 
 
 ## CONVLSTMMODEL : (sims, times, points, feature) --> (sims, times, points, feature)
 Trainined with all the timesteps but the goal is to use it with n previous know times, for example:
+
 (sim, 1, ...) ---predict---> (sim, 2, ...) 
 
 (sim, 1&2, ...) ---predict---> (sim, 2&3, ...)
@@ -23,7 +24,7 @@ Trainined with all the timesteps but the goal is to use it with n previous know 
 **Problem:**  Loss becomes nan - **solved: Do not use "relu" activation in LSTM - it leads to exploding gradients** (can also be solved with clipvalue in the adam optimizer but it harms the training(a lot))
 
 ## CONVMODEL : (sims * times , points, feature) --> (sims * times, points, feature)
-test loss around 2e-3.   
+test loss ~ 2e-3.   
 
 ---loss = mean(square(p-p_true)+square(ux-ux_true)+square(uy-uy_true)) ---
 
