@@ -86,3 +86,5 @@ Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be ab
 
 The non-dimensional NS equation was used: 
 
+To increase training performance, the data was further normalized to be in [0-1] range making the pressure (typical bigger value) having the same relevance as the velocity. 
+
