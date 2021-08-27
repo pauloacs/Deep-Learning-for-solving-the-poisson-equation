@@ -84,11 +84,9 @@ Using every cell for training revealed itself too expensive so now I'm using onl
 Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be able to do:  input:(...,other_N) --> output(...,other_N) with other_N > N. **Try this**
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/ux_movie%20(1).gif)
+**  Representar os resultados reais e não os normalizados na próxima atualização, faltou "desnormalizar" ** 
 
 Stop trying to predict from the 0-th time. The evolution from the initial conditions to the first time is very different from the evolution between times. As can be seen in the shown predictions, the model can not, with so little data, learn to predict that.
-
-
-**  Representar os resultados reais e não os normalizados na próxima atualização, faltou "denormalizar" ** 
 
 
 ## IV - Physics informed neural network
