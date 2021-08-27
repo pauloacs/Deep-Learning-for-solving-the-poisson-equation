@@ -33,13 +33,15 @@ PointNet (https://github.com/charlesq34/pointnet) concept is used joined with th
 
 # First results: 
 
-Since the ultimate goal is to, from the previous velocity field, predict the pressure and it need to be done for every cell of the mesh the training of model was done with all cells. It revealed itself too expensive and now I'm using only 1/4 of the data. 
-Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be able to do:  input:(...,other_N) --> output(...,other_N). **Try this**
+## Every cell
+Since the ultimate goal is to, from the previous velocity field, predict the pressure and it need to be done for every cell of the mesh the training of model was done with all cells. 
 
 CONV+PointNet : 50 epoch trainig with 100 simulations in the training set. (with padding and not ingnoring the padded values)
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/ux_movie.gif)
 
-CONV+PointNet : 50 epoch trainig with 100 simulations in the training set. (with padding and not ingnoring the padded values)
+## 1/4 
+It revealed itself too expensive so now I'm using only 1/4 of the data. 
+Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be able to do:  input:(...,other_N) --> output(...,other_N). **Try this**
 
 
