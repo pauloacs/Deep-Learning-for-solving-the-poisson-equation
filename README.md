@@ -5,8 +5,12 @@ In:
 the data (in this case 2D unsteady simulations): each frame of the simulation is used as an image in order to use typical convolutional models.
 
 To overcome the drawbacks of the below method, and be able to take data from any mesh without interpolation to an uniform grid (ressembling pixels of an image) losing information in zones of particular interest in the further methods the data is used as points on a domain (representing the cells of a mesh - including those at the boundaries).
+
+# I
+
 In:
 No info is given about the geometry, either way the model is able to learn. 
+IMPORTANT NOTE: This way the features (physical quantities) are mapped directly and it may be influenced by the order in wich those are given. To archieve invariance in this aspect, proceed to section II. 
 
 CONVLSTMMODEL : (sims, times, points, feature) --> (sims, times, points, feature)
 Trainined with all the timesteps but the goal is to use it with n previous know times, for example:
@@ -17,6 +21,8 @@ Trainined with all the timesteps but the goal is to use it with n previous know 
 (sim, 1&2&3, ...) ---predict---> (sim, 2&3&4, ...) ...and so on...
 
 CONVMODEL : (sims * times , points, feature) --> (sims * times, points, feature)
+
+# II 
 
 In:
 
