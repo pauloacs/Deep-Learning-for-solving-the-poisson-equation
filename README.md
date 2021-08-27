@@ -28,6 +28,8 @@ Trainined with all the timesteps but the goal is to use it with n previous know 
 
 **Problem:**  Loss becomes nan - **solved: Do not use "relu" activation in LSTM - it leads to exploding gradients** (can also be solved with clipvalue in the adam optimizer but it harms the training(a lot))
 
+- 1 780 000 parameters
+
 ## CONVMODEL 
 
 (sims * times , points, feature) --> (sims * times, points, feature)
@@ -48,9 +50,11 @@ PointNet is successfully used to predict flow quantities in https://arxiv.org/ab
 
 ## CONVLSTMMODEL + PointNet 
 
+- 2 560 000 parameters
 
 ## CONVMODEL + PointNet 
 
+- 2 670 000 parameters
 
 # First results: 
 
@@ -74,3 +78,11 @@ Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be ab
 -
 -
 -
+## Data details
+
+1st simulation: squared cylinder 
+
+2nd : squared cylinder  + cylinder + elipses
+
+The non-dimensional NS equation was used: 
+
