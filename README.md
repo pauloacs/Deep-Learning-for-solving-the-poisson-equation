@@ -16,6 +16,8 @@ IMPORTANT NOTE: This way the features (physical quantities) are mapped directly 
 
 ## CONVLSTMMODEL 
 
+Predicts only the next field of the next time.
+
 (sims, times, points, feature) --> (sims, times, points, feature)
 
 Trainined with all the timesteps but the goal is to use it with n previous know times, for example:
