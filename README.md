@@ -20,10 +20,10 @@ Trainined with all the timesteps but the goal is to use it with n previous know 
 
 (sim, 1&2&3, ...) ---predict---> (sim, 2&3&4, ...) ...and so on...
 
-**Problem:**  Loss gets nan - **solved: Do not use "relu" activation in LSTM - it leads to exploding gradients ** (can also be solved with clipvalue in the adam optimizer but it harms the training   
+**Problem:**  Loss becomes nan - **solved: Do not use "relu" activation in LSTM - it leads to exploding gradients** (can also be solved with clipvalue in the adam optimizer but it harms the training(a lot))
 
 CONVMODEL : (sims * times , points, feature) --> (sims * times, points, feature)
-
+test loss around 2e-3.   ---loss = mean(square(p-p_true)+square(ux-ux_true)+square(uy-uy_true)) ---
 
 # II 
 
