@@ -40,7 +40,10 @@ PointNet (https://github.com/charlesq34/pointnet) concept is used joined with th
 
 PointNet is successfully used to predict flow quantities in https://arxiv.org/abs/2010.09469 but for stationary flow, hence only giving coordinate information. Here the ultimate goal is to tackle the instationary evolution of a flow hence the network is not used directly as presented in the above image.  
 
+## CONVLSTMMODEL + PointNet 
 
+
+## CONVMODEL + PointNet 
 
 
 # First results: 
