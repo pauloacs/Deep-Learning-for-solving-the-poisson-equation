@@ -6,7 +6,9 @@ the data (in this case 2D unsteady simulations): each frame of the simulation is
 
 To overcome the drawbacks of the above method, and be able to take data from any mesh without interpolation to an uniform grid (ressembling pixels of an image) losing information in zones of particular interest in the further methods the data is used as points on a domain (representing the cells of a mesh - including those at the boundaries).
 
-# I
+# I - Image data
+
+# II - Point data
 
 In:
 No info is given about the geometry, either way the model is able to learn. 
@@ -28,11 +30,13 @@ test loss ~ 2e-3.
 
 ---loss = mean(square(p-p_true)+square(ux-ux_true)+square(uy-uy_true)) ---
 
-# II 
+# III -  POint data - with POintNet
 
 In:
 
 PointNet (https://github.com/charlesq34/pointnet) concept is used joined with the last models giving information about the geometry. Getting the spatial coordinates of each cell center the OpenFOAM's post-processing utility - writeCellCentres - is used. 
+
+PointNet is successfully used to predict flow quantities in https://arxiv.org/abs/2010.09469 but for stationary flow, ence only giving coordinate information. Here the ultimate goal is to tackle the instationary evolution of a flow hence the network is not used directly as presented in the above image.  
 
 
 
@@ -51,3 +55,10 @@ It revealed itself too expensive so now I'm using only 1/4 of the data.
 Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be able to do:  input:(...,other_N) --> output(...,other_N). **Try this**
 
 
+
+
+## TEST OTHER 3D POINTCLOUD FRAMEWORKS:
+-PointNET++
+-
+-
+-
