@@ -14,7 +14,10 @@ In:
 No info is given about the geometry, either way the model is able to learn. 
 IMPORTANT NOTE: This way the features (physical quantities) are mapped directly and it may be influenced by the order in wich those are given making the model not able to generalize to a totally different set of points of the same flow. To archieve invariance in this aspect, proceed to section II. 
 
-## CONVLSTMMODEL : (sims, times, points, feature) --> (sims, times, points, feature)
+## CONVLSTMMODEL 
+
+(sims, times, points, feature) --> (sims, times, points, feature)
+
 Trainined with all the timesteps but the goal is to use it with n previous know times, for example:
 
 (sim, 1, ...) ---predict---> (sim, 2, ...) 
@@ -25,7 +28,10 @@ Trainined with all the timesteps but the goal is to use it with n previous know 
 
 **Problem:**  Loss becomes nan - **solved: Do not use "relu" activation in LSTM - it leads to exploding gradients** (can also be solved with clipvalue in the adam optimizer but it harms the training(a lot))
 
-## CONVMODEL : (sims * times , points, feature) --> (sims * times, points, feature)
+## CONVMODEL 
+
+(sims * times , points, feature) --> (sims * times, points, feature)
+
 test loss ~ 2e-3.   
 
 ---loss = mean(square(p-p_true)+square(ux-ux_true)+square(uy-uy_true)) ---
