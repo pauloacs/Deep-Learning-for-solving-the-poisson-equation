@@ -1,1 +1,3 @@
+In this folder a compilation of the whole code for data generation and exporting to python (dl_data_generation.py) is provided for multiple cases.
 
+In the "make_dataset.py" file change the number of simulations for the desired value and run the allrun.sh file. The mesh parameters can be changed in "gen_blockMeshDict.py".
