@@ -71,6 +71,7 @@ CONV+PointNet : 50 epoch trainig with 100 simulations in the training set. (with
 It revealed itself too expensive so now I'm using only 1/4 of the data. 
 Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be able to do:  input:(...,other_N) --> output(...,other_N). **Try this**
 
+![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/ux_movie%20(1).gif)
 
 ## IV - Physics informed neural network
 
