@@ -36,7 +36,7 @@ Trainined with all the timesteps but the goal is to use it with n previous know 
 
 test loss ~ 2e-3.   
 
----loss = mean(square(p-p_true)+square(ux-ux_true)+square(uy-uy_true)) ---
+<img src="https://latex.codecogs.com/svg.image?loss&space;=&space;mean(&space;(u_{x}-u_{x,true})^{2}&plus;(u_{y}-u_{y,true})^{2}&plus;(p-p_{true})^{2}&space;)" title="loss = mean( (u_{x}-u_{x,true})^{2}+(u_{y}-u_{y,true})^{2}+(p-p_{true})^{2} )" />
 
 # III -  POint data - with POintNet
 
