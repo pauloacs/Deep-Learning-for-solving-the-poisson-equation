@@ -4,13 +4,13 @@ The two approaches can be mainly classified by the way the simulation data is tr
 In: 
 the data (in this case 2D unsteady simulations): each frame of the simulation is used as an image in order to use typical convolutional models.
 
-To overcome the drawbacks of the below method, and be able to take data from any mesh without interpolation to an uniform grid (ressembling pixels of an image) losing information in zones of particular interest in the further methods the data is used as points on a domain (representing the cells of a mesh - including those at the boundaries).
+To overcome the drawbacks of the above method, and be able to take data from any mesh without interpolation to an uniform grid (ressembling pixels of an image) losing information in zones of particular interest in the further methods the data is used as points on a domain (representing the cells of a mesh - including those at the boundaries).
 
 # I
 
 In:
 No info is given about the geometry, either way the model is able to learn. 
-IMPORTANT NOTE: This way the features (physical quantities) are mapped directly and it may be influenced by the order in wich those are given. To archieve invariance in this aspect, proceed to section II. 
+IMPORTANT NOTE: This way the features (physical quantities) are mapped directly and it may be influenced by the order in wich those are given making the model not able to generalize to a totally different set of points of the same flow. To archieve invariance in this aspect, proceed to section II. 
 
 CONVLSTMMODEL : (sims, times, points, feature) --> (sims, times, points, feature)
 Trainined with all the timesteps but the goal is to use it with n previous know times, for example:
@@ -29,7 +29,12 @@ In:
 PointNet (https://github.com/charlesq34/pointnet) concept is used joined with the last models giving information about the geometry. Getting the spatial coordinates of each cell center the OpenFOAM's post-processing utility - writeCellCentres - is used. 
 
 
-First results: 
+
+
+# First results: 
+
+Since the ultimate goal is to, from the previous velocity field, predict the pressure and it need to be done for every cell of the mesh the training of model was done with all cells. It revealed itself too expensive and now I'm using only 1/4 of the data. 
+Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be able to do:  input:(...,other_N) --> output(...,other_N). **Try this**
 
 CONV+PointNet : 50 epoch trainig with 100 simulations in the training set. (with padding and not ingnoring the padded values)
 
