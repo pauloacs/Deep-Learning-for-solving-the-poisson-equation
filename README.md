@@ -101,9 +101,10 @@ The loss is defined as:
 
 *B* - Boundaries and *GE* - Governing equations
 
-
 2 - retrain the big model (update its parameters) for only one prediction with the loss as defined above.
 
+
+- Currently I'm random sampling points in the domain interior to reduce the computational cost
 
 ## TEST OTHER 3D POINTCLOUD FRAMEWORKS:
 
