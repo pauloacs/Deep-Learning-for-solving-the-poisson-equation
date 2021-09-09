@@ -116,13 +116,14 @@ i- Coordinates as inputs (3 input features) and parameters as outputs having the
 
 ii - Coordinates and parameters predicted by the "ConvModel" as inputs (6 input features) - fast to approach the the loss of the ConvModel but can overfit in a way hard to overcome. 
 
-iii - Correction network
+iii - Correction network 
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/123.jpg)
 
+The layers connecting to the left side of the "add layer" can be thought as providing an offset to the results provided in the right hand side.  
+
 
 2 - retrain the big model (update its parameters) for only one prediction with the loss as defined above.
-
 
 
 ## TEST OTHER 3D POINTCLOUD FRAMEWORKS:
