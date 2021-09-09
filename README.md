@@ -118,6 +118,7 @@ ii - Coordinates and parameters predicted by the "ConvModel" as inputs (6 input 
 
 iii - Correction network
 
+![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/123.jpg)
 
 
 2 - retrain the big model (update its parameters) for only one prediction with the loss as defined above.
