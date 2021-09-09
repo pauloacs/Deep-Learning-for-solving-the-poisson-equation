@@ -124,7 +124,9 @@ and can be non-dimensionalized to:
 
 <img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;\textbf{u}^{*}}{\partial&space;x}&plus;\left&space;(&space;\textbf{u}^{*}&space;\cdot&space;{\nabla}^{*}&space;\right&space;)&space;\textbf{u}^{*}&space;=&space;-&space;{\nabla}^{*}&space;{p}^{*}&space;&plus;&space;\frac{1}{Re}&space;{\nabla}^{*^2}&space;\textbf{u}^{*}" title="\frac{\partial \textbf{u}^{*}}{\partial x}+\left ( \textbf{u}^{*} \cdot {\nabla}^{*} \right ) \textbf{u}^{*} = - {\nabla}^{*} {p}^{*} + \frac{1}{Re} {\nabla}^{*^2} \textbf{u}^{*}" />
 
-with <img src="https://latex.codecogs.com/svg.image?\mathbf{u}^{*}=&space;\frac{u}{U}&space;&space;\quad&space;t^{*}=\frac{t}{H/U}&space;\quad&space;\mathbf{\nabla}^{*}=H\nabla&space;\quad&space;p^{*}=\frac{p}{\rho&space;U^{2}}&space;" title="\mathbf{u}^{*}= \frac{u}{U} \quad t^{*}=\frac{t}{H/U} \quad \mathbf{\nabla}^{*}=H\nabla \quad p^{*}=\frac{p}{\rho U^{2}} " />
+with  
+
+<img src="https://latex.codecogs.com/svg.image?\mathbf{u}^{*}=&space;\frac{u}{U}&space;&space;\quad&space;\quad&space;t^{*}=\frac{t}{H/U}&space;\quad&space;\quad&space;\mathbf{\nabla}^{*}=H\nabla&space;\quad&space;\quad&space;p^{*}=\frac{p}{\rho&space;U^{2}}&space;\quad&space;\quad&space;Re&space;=&space;\frac{U}{\nu}&space;&space;" title="\mathbf{u}^{*}= \frac{u}{U} \quad \quad t^{*}=\frac{t}{H/U} \quad \quad \mathbf{\nabla}^{*}=H\nabla \quad \quad p^{*}=\frac{p}{\rho U^{2}} \quad \quad Re = \frac{U}{\nu} " />
 
 1st simulation: squared cylinder 
 
