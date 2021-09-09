@@ -126,6 +126,8 @@ The layers connecting to the left side of the "add layer" can be thought as prov
 2 - retrain the big model (update its parameters) for only one prediction with the loss as defined above.
 
 
+To do: Test "adaptive activation functions" to speed up training. (https://www.researchgate.net/publication/337511438_Adaptive_activation_functions_accelerate_convergence_in_deep_and_physics-informed_neural_networks)
+
 ## TEST OTHER 3D POINTCLOUD FRAMEWORKS:
 
 - PointNET++
