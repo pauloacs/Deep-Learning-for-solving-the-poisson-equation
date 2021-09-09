@@ -110,6 +110,10 @@ The loss is defined as:
 
 *B* - Boundaries and *GE* - Governing equations
 
+The input coordinates are normalized as :
+
+<img src="https://latex.codecogs.com/svg.image?\phi^{*}&space;=&space;\frac{2&space;\left&space;(&space;&space;\phi&space;-&space;\phi_{min}&space;\right&space;)}{\phi_{max}&space;-&space;\phi_{min}}&space;-&space;1" title="\phi^{*} = \frac{2 \left ( \phi - \phi_{min} \right )}{\phi_{max} - \phi_{min}} - 1" />
+
 Ideas: 
 
 i- Coordinates as inputs (3 input features) and parameters as outputs having the parameters predicted by the "Convmodel" helping in the training. 
