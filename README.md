@@ -116,6 +116,16 @@ The loss is defined as:
 
 ## Data details
 
+The Navier-Stokes equations for incompressible flow are (disconsidering the gravity term):
+
+
+
+and can be non-dimensionalized to:
+
+<img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;\textbf{u}^{*}}{\partial&space;x}&plus;\left&space;(&space;\textbf{u}^{*}&space;\cdot&space;{\nabla}^{*}&space;\right&space;)&space;\textbf{u}^{*}&space;=&space;-&space;{\nabla}^{*}&space;{p}^{*}&space;&plus;&space;\frac{1}{Re}&space;{\nabla}^{*^2}&space;\textbf{u}^{*}" title="\frac{\partial \textbf{u}^{*}}{\partial x}+\left ( \textbf{u}^{*} \cdot {\nabla}^{*} \right ) \textbf{u}^{*} = - {\nabla}^{*} {p}^{*} + \frac{1}{Re} {\nabla}^{*^2} \textbf{u}^{*}" />
+
+with <img src="https://latex.codecogs.com/svg.image?\mathbf{u}^{*}=&space;\frac{u}{U}&space;&space;\quad&space;t^{*}=\frac{t}{H/U}&space;\quad&space;\mathbf{\nabla}^{*}=H\nabla&space;\quad&space;p^{*}=\frac{p}{\rho&space;U^{2}}&space;" title="\mathbf{u}^{*}= \frac{u}{U} \quad t^{*}=\frac{t}{H/U} \quad \mathbf{\nabla}^{*}=H\nabla \quad p^{*}=\frac{p}{\rho U^{2}} " />
+
 1st simulation: squared cylinder 
 
 2nd : squared cylinder  + cylinder + elipses
@@ -128,5 +138,6 @@ To increase training performance, the data was further normalized to be in [0-1]
 where <img src="https://latex.codecogs.com/svg.image?\varphi" title="\varphi" /> is some physical quantity. The max and min values are those of the whole training set. 
 
 As all the simulations do not have the same number of cells, when exporting the data, the data was padded and since convolutional models do not allow masking, in the loss function the padded values are not accounted. 
+
 
 # Create and export simulation data -> details in data folder
