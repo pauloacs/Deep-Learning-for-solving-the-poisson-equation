@@ -100,6 +100,9 @@ a)
 
 To refine the understanding and implement one of these networks, firtly (as it is common in literature), the implementation of a model wich can predict the flow given the boundary, initial conditions and governing equations is implemented. It needs no data from the CFD solver, since it only needs to be given the coordinates of a sample of points and the parameters at the initial time. 
 
+The governing equations are not evaluated in every point, instead a random sample of the points' coordinates is taken and the residuals are calculated for those. 
+Random sample first - cheaper . Use **Latin hypercube sampling** (lhs) sampling later. 
+
 i - input [x, y, t] -> output: [ux, uy, p]
 
 Loss = Loss_boundary + Loss_Initial + Loss_equations
@@ -123,11 +126,14 @@ Leads to better convergence
 
 iii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
 
+The Cauchy momentum equations are used here:
 
-with the constitutive equation:
+<img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;\textbf{u}}{\partial&space;t}&space;&plus;&space;\left&space;(&space;\textbf{u}&space;\cdot&space;\nabla&space;\right&space;)\cdot&space;\textbf{u}&space;=&space;\nabla&space;\mathbf{\sigma^{*}}&space;" title="\frac{\partial \textbf{u}}{\partial t} + \left ( \textbf{u} \cdot \nabla \right )\cdot \textbf{u} = \nabla \mathbf{\sigma^{*}} " />
+
+
+with the constitutive equation for incompressible newtonian fluid:
 
 <img src="https://latex.codecogs.com/svg.image?\sigma^{*}&space;=&space;\frac{\sigma}{\rho}&space;=&space;-\frac{p}{\rho}&space;I&space;&plus;\nu&space;(\nabla&space;u&space;&plus;&space;\nabla&space;u^{T})" title="\sigma^{*} = \frac{\sigma}{\rho} = -\frac{p}{\rho} I +\nu (\nabla u + \nabla u^{T})" />
-
 
 
 
