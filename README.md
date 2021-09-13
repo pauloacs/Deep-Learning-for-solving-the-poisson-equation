@@ -156,6 +156,7 @@ with the constitutive equation for incompressible newtonian fluid:
 
 - Leads to convergence.  Needs only 2nd order derivations while ensuring continuity which makes the optimization problem easier. **Higher-order derivations lead to much higher computational and storage costs. ** 
 
+Concept from: https://arxiv.org/abs/2002.10558
 
 ## b) PINN with incorrect values
 
