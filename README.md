@@ -140,7 +140,7 @@ The stream function enforces continuity since:
 
 <img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;u_{x}}{\partial&space;x}&space;&plus;&space;\frac{\partial&space;u_{y}}{\partial&space;y}=\frac{\partial&space;}{\partial&space;x}\left&space;(&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;&plus;&space;\frac{\partial&space;}{\partial&space;y}\left&space;(-&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;=0" title="\frac{\partial u_{x}}{\partial x} + \frac{\partial u_{y}}{\partial y}=\frac{\partial }{\partial x}\left ( \frac{\partial \psi}{\partial x} \right ) + \frac{\partial }{\partial y}\left (- \frac{\partial \psi}{\partial x} \right ) =0" />
 
--Leads to convergence.  Needs 3rd order derivations!
+- Leads to convergence.  Needs 3rd order derivations!
 
 
 ### iii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
@@ -154,7 +154,7 @@ with the constitutive equation for incompressible newtonian fluid:
 
 <img src="https://latex.codecogs.com/svg.image?\sigma^{*}&space;=&space;\frac{\sigma}{\rho}&space;=&space;-\frac{p}{\rho}&space;I&space;&plus;\nu&space;(\nabla&space;u&space;&plus;&space;\nabla&space;u^{T})" title="\sigma^{*} = \frac{\sigma}{\rho} = -\frac{p}{\rho} I +\nu (\nabla u + \nabla u^{T})" />
 
--Leads to convergence.  Needs only 2nd order derivations while ensuring continuity.
+- Leads to convergence.  Needs only 2nd order derivations while ensuring continuity which makes the optimization problem easier. **Higher order derivations lead to much higher computational and storage cost. ** 
 
 
 ## b) PINN with incorrect values
