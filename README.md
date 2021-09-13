@@ -96,20 +96,20 @@ THE DRAWBACK - ONLY WORKS FOR 2D
 
 ## IV - Physics informed neural network
 
-a)
+## a) No data PINN
 
 To refine the understanding and implement one of these networks, firtly (as it is common in literature), the implementation of a model wich can predict the flow given the boundary, initial conditions and governing equations is implemented. It needs no data from the CFD solver, since it only needs to be given the coordinates of a sample of points and the parameters at the initial time. 
 
 The governing equations are not evaluated in every point, instead a random sample of the points' coordinates is taken and the residuals are calculated for those. 
 Random sample first - cheaper . Use **Latin hypercube sampling** (lhs) sampling later. 
 
-i - input [x, y, t] -> output: [ux, uy, p]
+### i - input [x, y, t] -> output: [ux, uy, p]
 
 Loss = Loss_boundary + Loss_Initial + Loss_equations
 
 Where loss_equations = NS_x + NS_y + Continuity
 
-ii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p]
+### ii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p]
 
 Ux and Uy are derived from <img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />:
 
@@ -122,9 +122,7 @@ The stream function enforces continuity since:
 Leads to better convergence
 
 
-
-
-iii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
+### iii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
 
 The Cauchy momentum equations are used here:
 
@@ -138,11 +136,11 @@ with the constitutive equation for incompressible newtonian fluid:
 
 
 
-b)
+## b) PINN with incorrect values
 
 Since the models have too much parameters, differentiate multiple times , for each batch in each epoch becomes prohibitively expensive (and very RAM demanding, crashing the google Colab when using 12,7 GB of RAM). To overcome this, multiple methods are being studied:
 
-1 - using a different neural network to refine the result of one of the previous models minimizing the residuals of the governing equations and matching the boundary conditions - not knowing the true values for the values in the interior of the domain. Using adam optimization but also L-BFGS as in https://github.com/maziarraissi/PINNs .
+## 1 - using a different neural network to refine the result of one of the previous models minimizing the residuals of the governing equations and matching the boundary conditions - not knowing the true values for the values in the interior of the domain. Using adam optimization but also L-BFGS as in https://github.com/maziarraissi/PINNs .
 
 The loss is defined as:
 
@@ -156,18 +154,18 @@ The input coordinates are normalized as :
 
 Ideas: 
 
-i- Coordinates as inputs (3 input features) and parameters as outputs having the parameters predicted by the "Convmodel" helping in the training. 
+### i- Coordinates as inputs (3 input features) and parameters as outputs having the parameters predicted by the "Convmodel" helping in the training. 
 
-ii - Coordinates and parameters predicted by the "ConvModel" as inputs (6 input features) - fast to approach the the loss of the ConvModel but can overfit in a way hard to overcome. 
+### ii - Coordinates and parameters predicted by the "ConvModel" as inputs (6 input features) - fast to approach the the loss of the ConvModel but can overfit in a way hard to overcome. 
 
-iii - Correction network 
+### iii - Correction network 
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/123.jpg)
 
 The layers connecting to the left side of the "add layer" can be thought as providing an offset to the results provided in the right hand side.  
 
 
-2 - retrain the big model (update its parameters) for only one prediction with the loss as defined above.
+## 2 - retrain the big model (update its parameters) for only one prediction with the loss as defined above.
 
 
 To do: Test "adaptive activation functions" to speed up training. (https://www.researchgate.net/publication/337511438_Adaptive_activation_functions_accelerate_convergence_in_deep_and_physics-informed_neural_networks)
