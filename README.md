@@ -95,7 +95,30 @@ a)
 
 To refine the understanding and implement one of these networks, firtly (as it is common in literature), the implementation of a model wich can predict the flow given the boundary, initial conditions and governing equations is implemented. It needs no data from the CFD solver, since it only needs to be given the coordinates of a sample of points and the parameters at the initial time. 
 
+i - input [x, y, t] -> output: [ux, uy, p]
 
+Loss = Loss_boundary + Loss_Initial + Loss_equations
+
+Where loss_equations = NS_x + NS_y + Continuity
+
+ii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p]
+
+Ux and Uy are derived from <img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />:
+
+<img src="https://latex.codecogs.com/svg.image?u_{x}=\frac{\partial&space;\psi&space;}{\partial&space;y}&space;\quad&space;\quad&space;&space;u_{y}=-\frac{\partial&space;\psi&space;}{\partial&space;x}" title="u_{x}=\frac{\partial \psi }{\partial y} \quad \quad u_{y}=-\frac{\partial \psi }{\partial x}" />
+
+The stream function enforces continuity since:
+
+<img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;u_{x}}{\partial&space;x}&space;&plus;&space;\frac{\partial&space;u_{y}}{\partial&space;y}=\frac{\partial&space;}{\partial&space;x}\left&space;(&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;&plus;&space;\frac{\partial&space;}{\partial&space;y}\left&space;(-&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;=0" title="\frac{\partial u_{x}}{\partial x} + \frac{\partial u_{y}}{\partial y}=\frac{\partial }{\partial x}\left ( \frac{\partial \psi}{\partial x} \right ) + \frac{\partial }{\partial y}\left (- \frac{\partial \psi}{\partial x} \right ) =0" />
+
+Much better convergence
+
+iii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
+
+
+with the constitutive equation:
+
+<img src="https://latex.codecogs.com/svg.image?\sigma^{*}&space;=&space;\frac{\sigma}{\rho}&space;=&space;-\frac{p}{\rho}&space;I&space;&plus;\nu&space;(\nabla&space;u&space;&plus;&space;\nabla&space;u^{T})" title="\sigma^{*} = \frac{\sigma}{\rho} = -\frac{p}{\rho} I +\nu (\nabla u + \nabla u^{T})" />
 
 
 b)
