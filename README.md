@@ -89,6 +89,11 @@ Maybe it can be trained with N cells:  input:(...,N) --> output(...,N) but be ab
 Stop trying to predict from the 0-th time. The evolution from the initial conditions to the first time is very different from the evolution between times. As can be seen in the shown predictions, the model can not, with so little data, learn to predict that.
 
 
+TRAIN TO PREDICT THE STREAM FUNCTION IN THE PREVIOUS MODELS - WILL ENFORCE CONTINUITY -
+THE DRAWBACK - ONLY WORKS FOR 2D
+
+
+
 ## IV - Physics informed neural network
 
 a)
