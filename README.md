@@ -1,6 +1,6 @@
 # Deep-Learning-for-solving-the-poisson-equation
 
-The approaches can be mainly classified by the way the simulation data is treated. 
+The approaches can be mainly classified by the way the simulation data is treated.
 In **I** the data (in this case 2D unsteady simulations): each frame of the simulation is used as an image in order to use typical convolutional models.
 
 To overcome the drawbacks of the above method, and be able to take data from any mesh without interpolation to an uniform grid (resembling pixels of an image) and without losing information in zones of particular interest in the further methods, in **II, III, IV** the data extracted as points off a domain (representing the cells of a mesh - including those at the boundaries).
