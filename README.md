@@ -161,7 +161,9 @@ with the constitutive equation for incompressible newtonian fluid:
 
 Since the models have too many parameters, differentiate multiple times, each batch in each epoch becomes prohibitively expensive (and very RAM demanding, crashing the google Colab when using 12,7 GB of RAM). To overcome this, multiple methods are being studied:
 
-## 1 - using a different neural network to refine the result of one of the previous models minimizing the residuals of the governing equations and matching the boundary conditions - not knowing the true values for the values in the interior of the domain. Using adam optimization but also L-BFGS as in https://github.com/maziarraissi/PINNs .
+## 1 - using a different neural network to refine the result of one of the previous models minimizing the residuals of the governing equations and matching the boundary conditions 
+
+- not knowing the true values for the values in the interior of the domain. Using adam optimization but also L-BFGS as in https://github.com/maziarraissi/PINNs .
 
 The loss is defined as:
 
