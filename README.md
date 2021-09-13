@@ -176,7 +176,7 @@ The layers connecting to the left side of the "add layer" can be thought as prov
 
 version 2:
 
-
+![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/123%20(1).jpg)
 
 
 ## 2 - retrain the big model (update its parameters) for only one prediction with the loss as defined above.
