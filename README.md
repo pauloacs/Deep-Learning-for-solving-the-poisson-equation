@@ -95,11 +95,13 @@ TRAIN TO PREDICT THE STREAM FUNCTION IN THE PREVIOUS MODELS - WILL ENFORCE CONTI
 THE DRAWBACK - ONLY WORKS FOR 2D
 
 
-Using OpenFOAM's postprocess utility typing : 
+Using OpenFOAM's postprocess utility by typing : 
 
 ```
 postprocess -func streamfunction 
 ```
+
+Now modifying the above models to predict <img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " /> instead of the velocity vector, it will ensure continuity.
 
 
 ## IV - Physics informed neural network
@@ -171,6 +173,10 @@ Ideas:
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/123.jpg)
 
 The layers connecting to the left side of the "add layer" can be thought as providing an offset to the results provided in the right hand side.  
+
+version 2:
+
+
 
 
 ## 2 - retrain the big model (update its parameters) for only one prediction with the loss as defined above.
