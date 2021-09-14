@@ -104,14 +104,12 @@ postprocess -func streamfunction
 Now modifying the above models to predict <img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " /> instead of the velocity vector, it will ensure continuity.
 
 
-Yet to do: Interpolate point field to vol field: 
+Yet to do: Interpolate PointField to VolField: 
 
 ```
-pointVolInterpolation::interpolate(phi);
+pointVolInterpolation::interpolate(streamFunction);
 ```
-(??)
-
-
+or export point data and in python interpolate to cell centroids. 
 
 ## IV - Physics informed neural network
 
