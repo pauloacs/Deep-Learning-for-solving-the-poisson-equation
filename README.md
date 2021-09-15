@@ -103,13 +103,14 @@ postprocess -func streamfunction
 
 Now modifying the above models to predict <img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " /> instead of the velocity vector, it will ensure continuity.
 
+Since streamFunction is a PointScalarField and we are using the vaues at the cell centers - volScalarField, it need to be interpolated:
 
-Yet to do: Interpolate PointField to VolField: 
+directly in openfoam it could be done by creating a volScalarField: streamFunction_vol and using the following function:
 
 ```
 pointVolInterpolation::interpolate(streamFunction);
 ```
-or export point data and in python interpolate to cell centroids. 
+Another option is to interpolate in python, for this **griddata** from scipy.interpolate is used. 
 
 ## IV - Physics informed neural network
 
