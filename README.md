@@ -118,7 +118,7 @@ or export point data and in python interpolate to cell centroids.
 To refine the understanding and implement one of these networks, firstly (as it is common in literature), the implementation of a model which can predict the flow given the boundary, initial conditions and governing equations is implemented. It needs no data from the CFD solver since it only needs to be given the coordinates of a sample of points and the parameters at the initial time. 
 
 The governing equations are not evaluated in every point, instead, a random sample of the points' coordinates is taken and the residuals are calculated for those. 
-Random sample first - cheaper. Use **Latin hypercube sampling** (lhs) sampling later. 
+Random sample first - cheaper. Use **Latin hypercube sampling** (lhs) sampling later: https://idaes-pse.readthedocs.io/en/1.5.1/surrogate/pysmo/pysmo_lhs.html.
 
 ### i - input [x, y, t] -> output: [ux, uy, p]
 
