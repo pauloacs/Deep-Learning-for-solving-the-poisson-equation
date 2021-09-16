@@ -124,7 +124,7 @@ Use **Latin hypercube sampling** (lhs) sampling later: https://idaes-pse.readthe
 
 In the more common examples in literature, the generation mode is chosen, it is much faster than the sampling one but here the purpose is to use a grid previously defined in OpenFOAM - allowing applicability to the **correction model** which will be definied ahead and automatization since scripts to generate meshes are already programmed and are present in the data folder. LHS sampling in the sampling mode is very computational expensive, therefore at this point ramdon sampling is employed in detriment of lhs. 
 
-### i - input [x, y, t] -> output: [ux, uy, p]
+## i - input [x, y, t] -> output: [ux, uy, p]
 
 <img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&space;&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
 
@@ -138,7 +138,7 @@ with:
 
 
 
-### ii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p]
+## ii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p]
 
 Ux and Uy are derived from <img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />:
 
@@ -161,7 +161,7 @@ with:
 
 
 
-### iii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
+## iii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
 
 The Cauchy momentum equations are used here:
 
@@ -211,11 +211,11 @@ The input coordinates are normalized as :
 
 Ideas: 
 
-### i- Coordinates as inputs (3 input features) and parameters as outputs having the parameters predicted by the "Convmodel" helping in the training. 
+## i- Coordinates as inputs (3 input features) and parameters as outputs having the parameters predicted by the "Convmodel" helping in the training. 
 
-### ii - Coordinates and parameters predicted by the "ConvModel" as inputs (6 input features) - fast to approach the loss of the ConvModel but can overfit in a way hard to overcome. 
+## ii - Coordinates and parameters predicted by the "ConvModel" as inputs (6 input features) - fast to approach the loss of the ConvModel but can overfit in a way hard to overcome. 
 
-### iii - Correction network 
+## iii - Correction network 
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/123.jpg)
 
