@@ -4,9 +4,10 @@ The approaches can be mainly classified by the way the simulation data is treate
 In **I** the data (in this case 2D unsteady simulations): each frame of the simulation is used as an image to use typical convolutional models.
 
 To overcome the drawbacks of the above method, and be able to take data from any mesh without interpolation to a uniform grid (resembling pixels of an image) and without losing information in zones of particular interest in the further methods, in **II, III, IV** the data extracted as points of a domain (representing the cells of a mesh - including those at the boundaries).
+<br/><br/> 
 
 # I - Image data
-
+<br/><br/> 
 # II - Point data
 
 No info is given about the geometry, either way, the model can learn. 
@@ -15,6 +16,7 @@ IMPORTANT NOTE: In this method, the features (physical quantities) are mapped di
 <br/><br/> 
 
 ## CONVLSTMMODEL 
+<br/><br/> 
 
 ** Esquema da rede **
 
@@ -37,6 +39,7 @@ Training with all the timesteps, but the goal is to use it with n previous know 
 <br/><br/> 
 
 ## CONVMODEL 
+<br/><br/> 
 
 ** Esquema da rede **
 
@@ -133,6 +136,7 @@ Another option is to interpolate in python, for this **griddata** from scipy.int
 
 
 ## a) No data PINN
+<br/><br/> 
 
 To refine the understanding and implement one of these networks, firstly (as it is common in literature), the implementation of a model which can predict the flow given the boundary, initial conditions and governing equations is implemented. It needs no data from the CFD solver since it only needs to be given the coordinates of a sample of points and the parameters at the initial time. 
 
@@ -267,15 +271,16 @@ To do: Test "adaptive activation functions" to speed up training. (https://www.r
 
 ## TEST OTHER 3D POINTCLOUD FRAMEWORKS:
 
-- PointNET++
-- PointConv
-- SO-NET
-- PSTNET
+- PointNET++: https://arxiv.org/abs/1706.02413
+- PointConv: https://arxiv.org/abs/1811.07246
+- SO-NET: https://arxiv.org/abs/1803.04249
+- PSTNET: https://openreview.net/pdf?id=O3bqkf_Puys
 
 <br/><br/> 
 <br/><br/> 
 
 ## Data details
+<br/><br/> 
 
 The Navier-Stokes equations for incompressible flow are (neglecting the gravity term):
 
