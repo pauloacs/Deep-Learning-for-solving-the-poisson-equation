@@ -139,6 +139,9 @@ pointVolInterpolation::interpolate(streamFunction);
 ```
 Another option is to interpolate in python, for this **griddata** from scipy.interpolate is used. 
 
+<br/><br/> 
+<br/><br/> 
+
 ## IV - Physics informed neural network
 
 <br/><br/> 
