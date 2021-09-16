@@ -119,11 +119,16 @@ Another option is to interpolate in python, for this **griddata** from scipy.int
 To refine the understanding and implement one of these networks, firstly (as it is common in literature), the implementation of a model which can predict the flow given the boundary, initial conditions and governing equations is implemented. It needs no data from the CFD solver since it only needs to be given the coordinates of a sample of points and the parameters at the initial time. 
 
 The governing equations are not evaluated in every point, instead, a random sample of the points' coordinates is taken and the residuals are calculated for those. 
-Random sample first - cheaper. Use **Latin hypercube sampling** (lhs) sampling later: https://idaes-pse.readthedocs.io/en/1.5.1/surrogate/pysmo/pysmo_lhs.html.
+Random sample first - cheaper. 
+Use **Latin hypercube sampling** (lhs) sampling later: https://idaes-pse.readthedocs.io/en/1.5.1/surrogate/pysmo/pysmo_lhs.html. lhs sampling from idaes has two modes: sampling and generation. 
+
+In the more common examples in literature, the generation mode is chosen, it is much faster than the sampling one but here the purpose is to use a grid previously defined in OpenFOAM - allowing applicability to the **correction model** which will be definied ahead and automatization since scripts to generate meshes are already programmed and are present in the data folder. LHS sampling in the sampling mode is very computational expensive, therefore at this point ramdon sampling is employed in detriment of lhs. 
 
 ### i - input [x, y, t] -> output: [ux, uy, p]
 
-Loss = Loss_boundary + Loss_Initial + Loss_equations
+<img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&space;&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
+
+*B* - Boundaries and *GE* - Governing equations *IC* - BOundary conditions
 
 Where loss_equations = NS_x + NS_y + Continuity
 
@@ -167,7 +172,7 @@ Since the models have too many parameters, differentiate multiple times, each ba
 
 The loss is defined as:
 
-<img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
+<img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&space;&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
 
 *B* - Boundaries and *GE* - Governing equations *IC* - BOundary conditions
 
