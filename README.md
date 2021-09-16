@@ -153,14 +153,17 @@ The Cauchy momentum equations are used here:
 
 <img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;\textbf{u}}{\partial&space;t}&space;&plus;&space;\left&space;(&space;\textbf{u}&space;\cdot&space;\nabla&space;\right&space;)\cdot&space;\textbf{u}&space;=&space;\nabla&space;\mathbf{\sigma^{*}}&space;" title="\frac{\partial \textbf{u}}{\partial t} + \left ( \textbf{u} \cdot \nabla \right )\cdot \textbf{u} = \nabla \mathbf{\sigma^{*}} " />
 
-
 with the constitutive equation for incompressible newtonian fluid:
 
 <img src="https://latex.codecogs.com/svg.image?\sigma^{*}&space;=&space;\frac{\sigma}{\rho}&space;=&space;-\frac{p}{\rho}&space;I&space;&plus;\nu&space;(\nabla&space;u&space;&plus;&space;\nabla&space;u^{T})" title="\sigma^{*} = \frac{\sigma}{\rho} = -\frac{p}{\rho} I +\nu (\nabla u + \nabla u^{T})" />
 
-- Leads to convergence.  Needs only 2nd order derivations while ensuring continuity which makes the optimization problem easier. **Higher-order derivations lead to much higher computational and storage costs. ** 
+- Leads to convergence.  Needs only 2nd order derivations while ensuring continuity which makes the optimization problem easier. **Higher-order derivations lead to much higher computational and storage costs.** 
 
 Concept from: https://arxiv.org/abs/2002.10558
+
+concepts i) and ii) are implemented in their own repositories ( i) https://github.com/maziarraissi/PINNs ii) https://github.com/Raocp/PINN-laminar-flow )  in a similar code using version 1.x of tensorflow and solve the problem with a mesh generated in python (using lhs sampling). 
+
+In this repository those concepts are developed in version 2.x making use of some of its utilities but also programming a costum training loop in order to provide extra flexibility allowing to make use of complex custom functions. 
 
 ## b) PINN with incorrect values
 
