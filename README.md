@@ -12,6 +12,8 @@ To overcome the drawbacks of the above method, and be able to take data from any
 No info is given about the geometry, either way, the model can learn. 
 IMPORTANT NOTE: In this method, the features (physical quantities) are mapped directly and that process may be influenced by the order in which the points are given therefore making the model not able to generalize to a differently organized set of points of the same flow. To achieve **invariance** in this aspect, proceed to section **II**. 
 
+<br/><br/> 
+
 ## CONVLSTMMODEL 
 
 ** Esquema da rede **
@@ -31,6 +33,8 @@ Training with all the timesteps, but the goal is to use it with n previous know 
 **Problem:**  Loss becomes nan - **solved: Do not use "relu" activation in LSTM - it leads to exploding gradients** (can also be solved with clipvalue in the adam optimizer but it harms the training(a lot))
 
 - 1 780 000 parameters
+
+<br/><br/> 
 
 ## CONVMODEL 
 
@@ -58,11 +62,15 @@ PointNet is successfully used to predict flow quantities in https://arxiv.org/ab
 
 The networks here developed will be introduced now:
 
+<br/><br/> 
+
 ## CONVLSTMMODEL + PointNet 
 
 ** Esquema da rede **
 
 - 2 560 000 parameters
+
+<br/><br/> 
 
 ## CONVMODEL + PointNet 
 
@@ -74,6 +82,7 @@ The networks here developed will be introduced now:
 
 # First results: 
 
+<br/><br/> 
 ## Every cell
 
 Since the ultimate goal is to, from the previous velocity field, predict the pressure and it needs to be done for every cell of the mesh, the training of the model was done with all cells. 
@@ -81,6 +90,8 @@ Since the ultimate goal is to, from the previous velocity field, predict the pre
 CONV+PointNet : 50 epoch training with 100 simulations in the training set. (with padding and not ignoring the padded values)
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/ux_movie.gif)
+
+<br/><br/> 
 
 ## 1/4 
 
@@ -117,6 +128,9 @@ pointVolInterpolation::interpolate(streamFunction);
 Another option is to interpolate in python, for this **griddata** from scipy.interpolate is used. 
 
 ## IV - Physics informed neural network
+
+<br/><br/> 
+
 
 ## a) No data PINN
 
@@ -224,7 +238,13 @@ Ideas:
 
 ## i- Coordinates as inputs (3 input features) and parameters as outputs having the parameters predicted by the "Convmodel" helping in the training. 
 
+<br/><br/> 
+<br/><br/> 
+
 ## ii - Coordinates and parameters predicted by the "ConvModel" as inputs (6 input features) - fast to approach the loss of the ConvModel but can overfit in a way hard to overcome. 
+
+<br/><br/> 
+<br/><br/> 
 
 ## iii - Correction network 
 
@@ -236,11 +256,14 @@ version 2:
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/123%20(1).jpg)
 
-
+<br/><br/> 
+<br/><br/>
 ## 2 - retrain the big model (update its parameters) for only one prediction with the loss as defined above.
 
 
 To do: Test "adaptive activation functions" to speed up training. (https://www.researchgate.net/publication/337511438_Adaptive_activation_functions_accelerate_convergence_in_deep_and_physics-informed_neural_networks)
+<br/><br/> 
+<br/><br/> 
 
 ## TEST OTHER 3D POINTCLOUD FRAMEWORKS:
 
