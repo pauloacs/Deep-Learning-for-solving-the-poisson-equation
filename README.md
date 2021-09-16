@@ -130,7 +130,9 @@ In the more common examples in literature, the generation mode is chosen, it is 
 
 *B* - Boundaries and *GE* - Governing equations *IC* - Initial conditions
 
-Where loss_equations = NS_x + NS_y + Continuity
+with: 
+
+<img src="https://latex.codecogs.com/svg.image?L_{GE}&space;=&space;Navier&space;Stokes_{x,residual}&space;&plus;&space;Navier&space;Stokes_{y,residual}&space;&plus;&space;Continuity_{residual}" title="L_{GE} = Navier Stokes_{x,residual} + Navier Stokes_{y,residual} + Continuity_{residual}" />
 
 - Does not converge. Needs 2nd order derivations
 
@@ -143,6 +145,14 @@ Ux and Uy are derived from <img src="https://latex.codecogs.com/svg.image?\psi&s
 The stream function enforces continuity since:
 
 <img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;u_{x}}{\partial&space;x}&space;&plus;&space;\frac{\partial&space;u_{y}}{\partial&space;y}=\frac{\partial&space;}{\partial&space;x}\left&space;(&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;&plus;&space;\frac{\partial&space;}{\partial&space;y}\left&space;(-&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;=0" title="\frac{\partial u_{x}}{\partial x} + \frac{\partial u_{y}}{\partial y}=\frac{\partial }{\partial x}\left ( \frac{\partial \psi}{\partial x} \right ) + \frac{\partial }{\partial y}\left (- \frac{\partial \psi}{\partial x} \right ) =0" />
+
+<img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&space;&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
+
+*B* - Boundaries and *GE* - Governing equations *IC* - Initial conditions
+
+with: 
+
+<img src="https://latex.codecogs.com/svg.image?L_{GE}&space;=&space;Navier&space;Stokes_{x,residual}&space;&plus;&space;Navier&space;Stokes_{y,residual}" title="L_{GE} = Navier Stokes_{x,residual} + Navier Stokes_{y,residual}" />
 
 - Leads to convergence.  Needs 3rd order derivations!
 
