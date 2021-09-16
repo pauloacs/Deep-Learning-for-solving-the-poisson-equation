@@ -12,10 +12,6 @@ To overcome the drawbacks of the above method, and be able to take data from any
 No info is given about the geometry, either way, the model can learn. 
 IMPORTANT NOTE: In this method, the features (physical quantities) are mapped directly and that process may be influenced by the order in which the points are given therefore making the model not able to generalize to a differently organized set of points of the same flow. To achieve **invariance** in this aspect, proceed to section **II**. 
 
-<br/><br/> 
-<br/><br/> 
-<br/><br/> 
-
 ## CONVLSTMMODEL 
 
 ** Esquema da rede **
@@ -49,6 +45,8 @@ The best test loss archived so far ~ 2e-3.
 Defining the loss as:
 
 <img src="https://latex.codecogs.com/svg.image?loss&space;=&space;mean(&space;(u_{x}-u_{x,true})^{2}&plus;(u_{y}-u_{y,true})^{2}&plus;(p-p_{true})^{2}&space;)" title="loss = mean( (u_{x}-u_{x,true})^{2}+(u_{y}-u_{y,true})^{2}+(p-p_{true})^{2} )" />
+<br/><br/> 
+<br/><br/> 
 
 # III -  POint data - with POintNet
 
@@ -71,6 +69,8 @@ The networks here developed will be introduced now:
 ** Esquema da rede **
 
 - 2 670 000 parameters
+<br/><br/> 
+<br/><br/> 
 
 # First results: 
 
@@ -127,6 +127,7 @@ Random sample first - cheaper.
 Use **Latin hypercube sampling** (lhs) sampling later: https://idaes-pse.readthedocs.io/en/1.5.1/surrogate/pysmo/pysmo_lhs.html. lhs sampling from idaes has two modes: sampling and generation. 
 
 In the more common examples in literature, the generation mode is chosen, it is much faster than the sampling one but here the purpose is to use a grid previously defined in OpenFOAM - allowing applicability to the **correction model** which will be definied ahead and automatization since scripts to generate meshes are already programmed and are present in the data folder. LHS sampling in the sampling mode is very computational expensive, therefore at this point ramdon sampling is employed in detriment of lhs. 
+<br/><br/> 
 
 ## i - input [x, y, t] -> output: [ux, uy, p]
 
@@ -140,7 +141,8 @@ with:
 
 - Does not converge. Needs 2nd order derivations
 
-
+<br/><br/> 
+<br/><br/> 
 
 ## ii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p]
 
@@ -163,7 +165,8 @@ with:
 - Leads to convergence.  Needs 3rd order derivations!
 
 
-
+<br/><br/> 
+<br/><br/> 
 
 ## iii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
 
@@ -192,7 +195,8 @@ concepts i) and ii) are implemented in their own repositories ( i) https://githu
 
 In this repository those concepts are developed in version 2.x making use of some of its utilities but also programming a costum training loop in order to provide extra flexibility allowing to make use of complex custom functions.
 
-
+<br/><br/> 
+<br/><br/> 
 
 
 ## b) PINN with incorrect values
@@ -212,6 +216,9 @@ The loss is defined as:
 The input coordinates are normalized as :
 
 <img src="https://latex.codecogs.com/svg.image?\phi^{*}&space;=&space;\frac{2&space;\left&space;(&space;&space;\phi&space;-&space;\phi_{min}&space;\right&space;)}{\phi_{max}&space;-&space;\phi_{min}}&space;-&space;1" title="\phi^{*} = \frac{2 \left ( \phi - \phi_{min} \right )}{\phi_{max} - \phi_{min}} - 1" />
+
+<br/><br/> 
+<br/><br/> 
 
 Ideas: 
 
@@ -242,6 +249,8 @@ To do: Test "adaptive activation functions" to speed up training. (https://www.r
 - SO-NET
 - PSTNET
 
+<br/><br/> 
+<br/><br/> 
 
 ## Data details
 
