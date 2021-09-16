@@ -136,6 +136,8 @@ with:
 
 - Does not converge. Needs 2nd order derivations
 
+
+
 ### ii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p]
 
 Ux and Uy are derived from <img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />:
@@ -157,6 +159,8 @@ with:
 - Leads to convergence.  Needs 3rd order derivations!
 
 
+
+
 ### iii - input [x, y, t] -> output: [<img src="https://latex.codecogs.com/svg.image?\psi&space;" title="\psi " />, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
 
 The Cauchy momentum equations are used here:
@@ -171,9 +175,21 @@ with the constitutive equation for incompressible newtonian fluid:
 
 Concept from: https://arxiv.org/abs/2002.10558
 
+<img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&space;&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
+
+*B* - Boundaries and *GE* - Governing equations *IC* - Initial conditions
+
+
+<img src="https://latex.codecogs.com/svg.image?L_{GE}&space;=&space;Cauchy_{x,residual}&space;&plus;&space;Cauchy_{y,residual}&space;&plus;&space;Const_{xx,residual}&space;&plus;&space;Const_{xy,residual}&space;&plus;&space;Const_{yy,residual}" title="L_{GE} = Cauchy_{x,residual} + Cauchy_{y,residual} + Const_{xx,residual} + Const_{xy,residual} + Const_{yy,residual}" />
+
+Const being the constitutive equation.
+
 concepts i) and ii) are implemented in their own repositories ( i) https://github.com/maziarraissi/PINNs ii) https://github.com/Raocp/PINN-laminar-flow )  in a similar code using version 1.x of tensorflow and solve the problem with a mesh generated in python (using lhs sampling). 
 
-In this repository those concepts are developed in version 2.x making use of some of its utilities but also programming a costum training loop in order to provide extra flexibility allowing to make use of complex custom functions. 
+In this repository those concepts are developed in version 2.x making use of some of its utilities but also programming a costum training loop in order to provide extra flexibility allowing to make use of complex custom functions.
+
+
+
 
 ## b) PINN with incorrect values
 
