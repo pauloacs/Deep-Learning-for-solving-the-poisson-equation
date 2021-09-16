@@ -11,6 +11,7 @@ To overcome the drawbacks of the above method, and be able to take data from any
 
 No info is given about the geometry, either way, the model can learn. 
 IMPORTANT NOTE: In this method, the features (physical quantities) are mapped directly and that process may be influenced by the order in which the points are given therefore making the model not able to generalize to a differently organized set of points of the same flow. To achieve **invariance** in this aspect, proceed to section **II**. 
+<br/><br/> i
 
 ## CONVLSTMMODEL 
 
