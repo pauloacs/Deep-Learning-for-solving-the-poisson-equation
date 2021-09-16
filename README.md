@@ -167,7 +167,7 @@ Since the models have too many parameters, differentiate multiple times, each ba
 
 The loss is defined as:
 
-<img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
+<img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
 
 *B* - Boundaries and *GE* - Governing equations *IC* - BOundary conditions
 
