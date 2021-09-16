@@ -1,7 +1,7 @@
 # Deep-Learning-for-solving-the-poisson-equation
 
 
-Github webpage : https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation
+Github webpage : https://pauloacs.github.io/Deep-Learning-for-solving-the-poisson-equation/
 
 The approaches can be mainly classified by the way the simulation data is treated.
 In **I** the data (in this case 2D unsteady simulations): each frame of the simulation is used as an image to use typical convolutional models.
