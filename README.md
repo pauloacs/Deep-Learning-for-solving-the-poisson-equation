@@ -8,6 +8,15 @@ To overcome the drawbacks of the above method, and be able to take data from any
 
 # I - Image data
 <br/><br/> 
+
+Backward_facing step simulations and model as in: https://github.com/IllusoryTime/Image-Based-CFD-Using-Deep-Learning.
+
+Inspired in the mentioned repository the unsteady nature of the Kármán vortex street is predicted. The process of voxelization and the model were symilar to similar to the above mentioned work. 
+
+...explain how the voxelization is done...
+
+<br/><br/> 
+
 # II - Point data
 
 No info is given about the geometry, either way, the model can learn. 
