@@ -166,7 +166,7 @@ Use **Latin hypercube sampling** (lhs) sampling later: https://idaes-pse.readthe
 In the more common examples in literature, the generation mode is chosen, it is much faster than the sampling one but here the purpose is to use a grid previously defined in OpenFOAM - allowing applicability to the **correction model** which will be definied ahead and automatization since scripts to generate meshes are already programmed and are present in the data folder. LHS sampling in the sampling mode is very computational expensive, therefore at this point ramdom sampling is employed in detriment of lhs. 
 
 <br/><br/> 
-lhs in generation mode could be used but it would not generalize to complex shapes since the procedure is to generate points within a rectangule and only after exclude those inside the obstacle. (unless I export points from all the boundaries and write a function which deletes points inside/outside of them. 
+lhs in generation mode could be used but it would not generalize to complex shapes since the procedure is to generate points within a rectangle and only after exclude those inside the obstacle. (unless I export points from all the boundaries and write a function which deletes points inside/outside of them. 
 <br/><br/> 
 
 ## i - input [x, y, t] -> output: [ux, uy, p]
