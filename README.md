@@ -179,7 +179,7 @@ with:
 
 <img src="https://latex.codecogs.com/svg.image?L_{GE}&space;=&space;Navier&space;Stokes_{x,residual}&space;&plus;&space;Navier&space;Stokes_{y,residual}&space;&plus;&space;Continuity_{residual}" title="L_{GE} = Navier Stokes_{x,residual} + Navier Stokes_{y,residual} + Continuity_{residual}" />
 
-- Does not converge. Needs 2nd order derivations
+- Does not converge **yet**. Needs 2nd order derivations. The advantage is that this models is not constraint to 2D problems, making it work would be helpful.  
 
 <br/><br/> 
 <br/><br/> 
@@ -237,6 +237,10 @@ In this repository those concepts are developed in version 2.x making use of som
 
 <br/><br/> 
 <br/><br/> 
+
+## iv - input [x, y, t] -> output: [ux, uy, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
+
+This would be the model with the lowest computations cost on differentiation because only first order derivatives are needed. This could compensate the harder convergence. ALLOW FOR 3D  **CURRENTLY WORKING ON THIS**
 
 
 ## b) PINN with incorrect values
