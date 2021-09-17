@@ -64,6 +64,10 @@ The best test loss archived so far ~ 2e-3.
 Defining the loss as:
 
 <img src="https://latex.codecogs.com/svg.image?loss&space;=&space;mean(&space;(u_{x}-u_{x,true})^{2}&plus;(u_{y}-u_{y,true})^{2}&plus;(p-p_{true})^{2}&space;)" title="loss = mean( (u_{x}-u_{x,true})^{2}+(u_{y}-u_{y,true})^{2}+(p-p_{true})^{2} )" />
+
+As expected this architecture has troubles in generalization. Should process to work only with the ones with coordinate information. 
+This models mimic the ones with image data, but convolutions in image data have information about location and here they don't.
+
 <br/><br/> 
 <br/><br/> 
 
@@ -159,7 +163,10 @@ The governing equations are not evaluated in every point, instead, a random samp
 Random sample first - cheaper. 
 Use **Latin hypercube sampling** (lhs) sampling later: https://idaes-pse.readthedocs.io/en/1.5.1/surrogate/pysmo/pysmo_lhs.html. lhs sampling from idaes has two modes: sampling and generation. 
 
-In the more common examples in literature, the generation mode is chosen, it is much faster than the sampling one but here the purpose is to use a grid previously defined in OpenFOAM - allowing applicability to the **correction model** which will be definied ahead and automatization since scripts to generate meshes are already programmed and are present in the data folder. LHS sampling in the sampling mode is very computational expensive, therefore at this point ramdon sampling is employed in detriment of lhs. 
+In the more common examples in literature, the generation mode is chosen, it is much faster than the sampling one but here the purpose is to use a grid previously defined in OpenFOAM - allowing applicability to the **correction model** which will be definied ahead and automatization since scripts to generate meshes are already programmed and are present in the data folder. LHS sampling in the sampling mode is very computational expensive, therefore at this point ramdom sampling is employed in detriment of lhs. 
+
+<br/><br/> 
+lhs in generation mode could be used but it would not generalize to complex shapes since the procedure is to generate points within a rectangule and only after exclude those inside the obstacle. (unless I export points from all the boundaries and write a function which deletes points inside/outside of them. 
 <br/><br/> 
 
 ## i - input [x, y, t] -> output: [ux, uy, p]
