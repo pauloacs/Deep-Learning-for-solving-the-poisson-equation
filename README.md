@@ -323,7 +323,7 @@ and can be non-dimensionalized to:
 
 with  
 
-<img src="https://latex.codecogs.com/svg.image?\mathbf{u}^{*}=&space;\frac{u}{U}&space;&space;\quad&space;\quad&space;t^{*}=\frac{t}{H/U}&space;\quad&space;\quad&space;\mathbf{\nabla}^{*}=H\nabla&space;\quad&space;\quad&space;p^{*}=\frac{p}{\rho&space;U^{2}}&space;\quad&space;\quad&space;Re&space;=&space;\frac{U}{\nu}&space;&space;" title="\mathbf{u}^{*}= \frac{u}{U} \quad \quad t^{*}=\frac{t}{H/U} \quad \quad \mathbf{\nabla}^{*}=H\nabla \quad \quad p^{*}=\frac{p}{\rho U^{2}} \quad \quad Re = \frac{U}{\nu} " />
+<img src="https://latex.codecogs.com/svg.image?\mathbf{u}^{*}=&space;\frac{u}{U}&space;&space;\quad&space;\quad&space;t^{*}=\frac{t}{H/U}&space;\quad&space;\quad&space;\mathbf{\nabla}^{*}=H\nabla&space;\quad&space;\quad&space;p^{*}=\frac{p}{\rho&space;U^{2}}&space;\quad&space;\quad&space;Re&space;=&space;\frac{U}{\nu}&space;&space;" title="\mathbf{u}^{*}= \frac{u}{U} \quad \quad t^{*}=\frac{t}{H/U} \quad \quad \mathbf{\nabla}^{*}=H\nabla \quad \quad p^{*}=\frac{p}{\rho U^{2}} \quad \quad Re = \frac{UH}{\nu} " />
 
 U is the mean velocity (a parabolic profile is implemented at the inlet) fixed at 1. 
 H = 1 , nu = 5e-3
