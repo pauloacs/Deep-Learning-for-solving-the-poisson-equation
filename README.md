@@ -315,7 +315,7 @@ To do: Test "adaptive activation functions" to speed up training. (https://www.r
 
 The Navier-Stokes equations for incompressible flow are (neglecting the gravity term):
 
-
+<img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;u&space;}{\partial&space;t}&space;&plus;&space;(u&space;\cdot&space;\nabla)u&space;=&space;-\nabla&space;p&space;&plus;&space;\nu&space;{\nabla}^2&space;u" title="\frac{\partial u }{\partial t} + (u \cdot \nabla)u = -\nabla p + \nu {\nabla}^2 u" />
 
 and can be non-dimensionalized to:
 
