@@ -230,10 +230,15 @@ Concept from: https://arxiv.org/abs/2002.10558
 <img src="https://latex.codecogs.com/svg.image?L_{GE}&space;=&space;Cauchy_{x,residual}&space;&plus;&space;Cauchy_{y,residual}&space;&plus;&space;Const_{xx,residual}&space;&plus;&space;Const_{xy,residual}&space;&plus;&space;Const_{yy,residual}" title="L_{GE} = Cauchy_{x,residual} + Cauchy_{y,residual} + Const_{xx,residual} + Const_{xy,residual} + Const_{yy,residual}" />
 
 Const being the constitutive equation.
+<br/><br/> 
+Steady-state flow prediction is easily done:
+
+
 
 concepts i) and ii) are implemented in their own repositories ( i) https://github.com/maziarraissi/PINNs ii) https://github.com/Raocp/PINN-laminar-flow )  in a similar code using version 1.x of tensorflow and solve the problem with a mesh generated in python (using lhs sampling). 
 
 In this repository those concepts are developed in version 2.x making use of some of its utilities but also programming a costum training loop in order to provide extra flexibility allowing to make use of complex custom functions.
+
 
 <br/><br/> 
 <br/><br/> 
