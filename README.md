@@ -221,6 +221,11 @@ with the constitutive equation for incompressible newtonian fluid:
 - Leads to convergence.  Needs only 2nd order derivations while ensuring continuity which makes the optimization problem easier. **Higher-order derivations lead to much higher computational and storage costs.** 
 
 Concept from: https://arxiv.org/abs/2002.10558
+<br/><br/> 
+For steady-state flow the following result was archieved:
+
+
+with 10e3 adam optimization iterations and 30e3 L-BFGS iterations.
 
 <img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&space;&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
 
