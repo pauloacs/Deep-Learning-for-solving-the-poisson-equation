@@ -222,11 +222,14 @@ with the constitutive equation for incompressible newtonian fluid:
 
 Concept from: https://arxiv.org/abs/2002.10558
 <br/><br/> 
-For steady-state flow the following result was archieved:
+
+For steady-state flow the following result were archieved:
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/IV_PINN/PINN_sigma_steady_10000+30000.png)
 
-with 10e3 adam optimization iterations and 30e3 L-BFGS iterations.
+The training consisted in: 
+- 10000 Adam optimization iterations
+- 30000 L-BFGS iterations
 
 <img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&space;&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
 
