@@ -194,6 +194,19 @@ The stream function enforces continuity since:
 
 <img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;u_{x}}{\partial&space;x}&space;&plus;&space;\frac{\partial&space;u_{y}}{\partial&space;y}=\frac{\partial&space;}{\partial&space;x}\left&space;(&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;&plus;&space;\frac{\partial&space;}{\partial&space;y}\left&space;(-&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;=0" title="\frac{\partial u_{x}}{\partial x} + \frac{\partial u_{y}}{\partial y}=\frac{\partial }{\partial x}\left ( \frac{\partial \psi}{\partial x} \right ) + \frac{\partial }{\partial y}\left (- \frac{\partial \psi}{\partial x} \right ) =0" />
 
+
+For steady-state flow the following result were archieved:
+
+![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/IV_PINN/PINN_phi_steady_10e3%2B50e3.png)
+
+The training consisted in: 
+- 10000 Adam optimization iterations
+- 50000 L-BFGS iterations
+
+<br/><br/> 
+
+For transient flow the loss function is defined as:
+
 <img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&space;&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
 
 *B* - Boundaries and *GE* - Governing equations *IC* - Initial conditions
@@ -230,6 +243,10 @@ For steady-state flow the following result were archieved:
 The training consisted in: 
 - 10000 Adam optimization iterations
 - 30000 L-BFGS iterations
+
+<br/><br/> 
+
+For unsteady:
 
 <img src="https://latex.codecogs.com/svg.image?&space;&space;&space;&space;&space;&space;&space;Loss=&space;L_{B}&space;&plus;&space;L_{GE};&space;&plus;&space;L_{IC}" title=" Loss= L_{B} + L_{GE} + L_{IC} " />
 
