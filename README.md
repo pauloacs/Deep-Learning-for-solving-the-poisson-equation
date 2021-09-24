@@ -224,7 +224,8 @@ Concept from: https://arxiv.org/abs/2002.10558
 <br/><br/> 
 For steady-state flow the following result was archieved:
 
-![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/IV_PINN/PINN_sigma.png)
+![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/IV_PINN/PINN_sigma_p.png)
+![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/IV_PINN/PINN_sigma%20(1).png)
 
 with 10e3 adam optimization iterations and 30e3 L-BFGS iterations.
 
