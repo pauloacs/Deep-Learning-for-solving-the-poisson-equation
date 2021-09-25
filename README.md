@@ -271,7 +271,11 @@ In this repository those concepts are developed in version 2.x making use of som
 
 ## iv - input [x, y, t] -> output: [ux, uy, p, <img src="https://latex.codecogs.com/svg.image?\sigma" title="\sigma" />]
 
-This would be the model with the lowest computations cost on differentiation because only first order derivatives are needed. This could compensate the harder convergence. ALLOW FOR 3D  **CURRENTLY WORKING ON THIS**
+This would be the model with the lowest computations cost on differentiation because only first order derivatives are needed. This could compensate the harder convergence. -did not converge yet-
+
+<br/><br/> 
+NOTE THAT CONVERGENCE IN THIS MODELS IS HIGHLY DEPENDENT ON THE DEFINITION OF THE LOSS FUNCTION.
+<br/><br/> 
 
 
 ## b) PINN with incorrect values
