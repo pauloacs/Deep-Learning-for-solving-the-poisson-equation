@@ -197,7 +197,7 @@ The stream function enforces continuity since:
 
 For steady-state flow the following result were archieved:
 
-![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/IV_PINN/PINN_phi_steady_10e3%2B50e3.png)
+![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/PINN_phi_steady.png)
 
 The training consisted in: 
 - 10000 Adam optimization iterations
