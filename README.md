@@ -195,13 +195,14 @@ The stream function enforces continuity since:
 <img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;u_{x}}{\partial&space;x}&space;&plus;&space;\frac{\partial&space;u_{y}}{\partial&space;y}=\frac{\partial&space;}{\partial&space;x}\left&space;(&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;&plus;&space;\frac{\partial&space;}{\partial&space;y}\left&space;(-&space;\frac{\partial&space;\psi}{\partial&space;x}&space;\right&space;)&space;=0" title="\frac{\partial u_{x}}{\partial x} + \frac{\partial u_{y}}{\partial y}=\frac{\partial }{\partial x}\left ( \frac{\partial \psi}{\partial x} \right ) + \frac{\partial }{\partial y}\left (- \frac{\partial \psi}{\partial x} \right ) =0" />
 
 
-For steady-state flow the following result were archieved:
+For steady-state flow the following results were archieved:
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/images/PINN_phi_steady.png)
 
 The training consisted in: 
 - 10000 Adam optimization iterations
 - 50000 L-BFGS iterations
+Showing a very good prediction from the PINN.
 
 <br/><br/> 
 
@@ -236,13 +237,15 @@ with the constitutive equation for incompressible newtonian fluid:
 Concept from: https://arxiv.org/abs/2002.10558
 <br/><br/> 
 
-For steady-state flow the following result were archieved:
+For steady-state flow the following results were archieved:
 
 ![alt text](https://github.com/pauloacs/Deep-Learning-for-solving-the-poisson-equation/blob/main/IV_PINN/PINN_sigma_steady_10000+30000.png)
 
 The training consisted in: 
 - 10000 Adam optimization iterations
 - 30000 L-BFGS iterations
+
+Showing also a good solution for the steady-state flow. 
 
 <br/><br/> 
 
@@ -276,6 +279,7 @@ This would be the model with the lowest computations cost on differentiation bec
 <br/><br/> 
 NOTE THAT CONVERGENCE IN THIS MODELS IS HIGHLY DEPENDENT ON THE DEFINITION OF THE LOSS FUNCTION.
 <br/><br/> 
+
 
 
 ## b) PINN with incorrect values
